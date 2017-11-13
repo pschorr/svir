@@ -9,3 +9,6 @@ Description: This package contains scripts that will re-rank census tracts based
 License: GNU GENERAL PUBLIC LICENSE, vERSION 3 (GPLv3)
 Encoding: UTF-8
 LazyData: true
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
