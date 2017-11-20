@@ -151,6 +151,8 @@ dev.off()
 
 ## Regional SVI Calculation
 
+## GUI for Regional SVI by User Input
 
+![Census Tracts Selected by Hurricane Sandy Impact Shapefile)](../vignettes/RegionalSVI_ShinyGUI_11_20_17.png)
 
 [Back to top](#summary)
