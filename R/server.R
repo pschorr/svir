@@ -3,6 +3,7 @@ library(rgdal)
 library(rpostgis)
 library(RPostgreSQL)
 library(sp)
+library(leaflet)
 
 # Define server logic
 shinyServer(function(input, output) {
