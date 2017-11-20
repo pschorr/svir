@@ -1,0 +1,156 @@
+---
+title: "Assignment 6"
+author: "Amy Leung and Maximilian Pschorr"
+output: 
+  rmarkdown::html_vignette:
+    fig_caption: yes
+    number_sections: yes
+    toc_depth: 3
+    toc: yes
+vignette: >
+  %\VignetteIndexEntry{overview}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 14px;
+  }
+td {  /* Table  */
+  font-size: 14px;
+}
+h1.title {
+  font-size: 38px;
+  <!-- color: DarkRed; -->
+}
+h1 { /* Header 1 */
+  font-size: 28px;
+  <!-- color: DarkBlue; -->
+}
+h2 { /* Header 2 */
+    font-size: 22px;
+  <!-- color: DarkBlue; -->
+}
+h3 { /* Header 3 */
+  font-size: 16px;
+  <!-- font-family: "Times New Roman", Times, serif; -->
+  <!-- color: Black; -->
+}
+code.r{ /* Code block */
+    font-size: 14px;
+}
+pre { /* Code block - determines code spacing between lines */
+    font-size: 14px;
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.align = 'center', fig.height = 4, 
+                      fig.width = 5, fig.path = "images/")
+knitr::opts_chunk$set(echo = TRUE)
+library(raster)
+library(sp)
+library(rgdal)
+library(rgeos)
+library(knitr)
+library(png)
+wd <- getwd()
+class(wd)
+wd
+```
+
+# Summary{#summary}
+
+\
+The Social Vulnerability Index (SVI) provides a means of quantifying the relative degree of community vulnerability that stems from socio-demographic factors. Originally developed by the Agency for Toxic Substances and Disease Registry, within the Department of Health and Human Services, the SVI is calculated using variables from the U.S. Census, and American Community Survey (ACS). These variables provide a means to relatively quantify multiple types of socio-economic vulnerabilities at the national and state level. The primary purpose of the index is identify potentially less resilient communities, in order to help inform effective policies for disaster preparation, mitigation, and recovery efforts.
+
+The SVI contains five primary index values: one for each of four thematic domains (Socioeconomic Status, Household Composition/Disability, Minority Status/Language, housing and transportation), and an overall index that aggregates each of the four domains. Each census tract receives relative ranking among all census tracts at the national and states level, for each of the five index values. 
+
+
+
+[Back to top](#summary)
+
+# Approach and Method
+
+Percentile Ranking: 
+
+\
+
+
+1. Rank 15 census variables from highest to lowest (except per capita income, rank lowest to highest)
+    + Calculate percentile rank for each census tract
+
+
+\
+
+
+2. Calculate tract level percentile rank
+    + Across the board sum of percentile ranks
+
+
+\
+
+
+3. Calculate overall percentile rank
+    + Percentile rank of sum of the domain percentile ranks
+
+
+[Back to top](#summary)
+
+# Data / Packages
+
+[Back to top](#summary)
+
+## ATSDR Social Vulnerability Index
+
+### 2010 United States Census
+
+```{r, eval = FALSE}
+pg = dbDriver("PostgreSQL") #Create postgreS driver
+con = dbConnect(pg, user = 'postgres', password='pschorrzan1960',
+                host="localhost", port=5432, dbname="SVI") # Connect to database
+
+usCT_noAkHi <- pgGetGeom(con, query = "SELECT * FROM svi_us_geom WHERE st_abbr NOT IN ('AK', 'HI')")
+
+png(filename = "../vignettes/usCT_noAkHi.png", width = 800, height = 600, units = "px", pointsize = 10)
+plot(usCT_noAkHi)
+dev.off()
+```
+
+![United States Census Tracts (omitting Alaska and Hawaii)](../vignettes/usCT_noAkHi.png)
+
+
+### American Community Survey 5-Year Averages (2010 - 2014)
+
+[Back to top](#summary)
+
+## R Packages
+
+1. `raster`
+2. `sp`
+3. `rgdal`
+4. `rgeos`
+5. `RPostgreSQL`
+6. `rpostgis`
+7. 
+
+
+[Back to top](#summary)
+
+## PostreSQL / PostGIS
+
+[Back to top](#summary)
+
+
+# Code
+
+[Back to top](#summary)
+
+# Anticipated Outcomes
+
+## Regional SVI Calculation
+
+
+
+[Back to top](#summary)
