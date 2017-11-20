@@ -4,15 +4,15 @@ library(rpostgis)
 library(RPostgreSQL)
 library(sp)
 
+# create a PostgreSQL instance and create one connection
+drv <- dbDriver("PostgreSQL")
+
+# open the connection with credentials
+con <- dbConnect(drv, user="postgres", password="gisde2018",
+                 host="localhost", port=5432,dbname="svir")
+
 # Define server logic
 shinyServer(function(input, output) {
-
-  # create a PostgreSQL instance and create one connection
-  drv <- dbDriver("PostgreSQL")
-
-  # open the connection with credentials
-  con <- dbConnect(drv, user="postgres", password="gisde2018",
-                   host="localhost", port=5432,dbname="svir")
 
   # create upload file function
   uploadShpfile <- reactive({
@@ -29,11 +29,12 @@ shinyServer(function(input, output) {
       setwd(prevWD)
       shpFile <- readOGR(shpPath)
       writeOGR(shpFile, dsn = c("PG:user = 'postgres' dbname = 'svir' host = 'localhost'"),  # write shp to PG table & create sp index
-               layer_options = "geometry_name = geom", layer = "userext", overwrite_layer = TRUE, driver = "PostgreSQL")
-      pgGetGeom(con, name = c("public", "svi2014_us"), geom = "geom", gid = "gid", clauses = "SELECT *
-                FROM svi2014_us AS svi, userext AS poly
-                WHERE ST_Intersects(svi.geom, poly.wkb_geometry)")  # find intersections of user input and states and return geom
-      return(shpFile)
+               layer = "userext", overwrite_layer = TRUE, driver = "PostgreSQL")
+      res <- pgGetGeom(con, name = c("public", "svi2014_us"), geom = "geom", gid = "gid", query = "SELECT *
+                     FROM svi2014_us AS svi, userext AS poly
+                       WHERE ST_Intersects(svi.geom, ST_Transform(poly.wkb_geometry, 4269))")  # find intersections of user input and states and return geom
+      return(res)
+
     } else {
       return()
     }
@@ -46,3 +47,7 @@ shinyServer(function(input, output) {
     }
   })
 })
+
+# disconnect db connection
+dbDisconnect(con)
+dbUnloadDriver(drv)
