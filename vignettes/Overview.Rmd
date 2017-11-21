@@ -76,12 +76,9 @@ In previous implementations of SVI, these relative values were calculated for ea
 
 [Back to top](#summary)
 
-<<<<<<< HEAD
+
 <br></br>
-=======
 
-
->>>>>>> b334136d78da7e09e416521ee1bfb49a64ada086
 
 # Approach and Method
 
@@ -110,23 +107,9 @@ Percentile Ranking:
 
 [Back to top](#summary)
 
-<<<<<<< HEAD
 <br></br>
 
-# Data / Packages
-=======
-
-
-
-
-# Data
->>>>>>> b334136d78da7e09e416521ee1bfb49a64ada086
-
-[Back to top](#summary)
-
-<br></br>
-
-## ATSDR Social Vulnerability Index
+## Data
 
 ### 2010 United States Census and American Community Survey (2010 - 2014 5-Year Average) Variables
 
@@ -144,18 +127,13 @@ dev.off()
 
 ![United States Census Tracts (omitting Alaska and Hawaii)](../vignettes/usCT_noAkHi.png)
 
+<br></br>
 
-<<<<<<< HEAD
 ### American Community Survey 5-Year Averages (2010 - 2014)
 
 <br></br>
 
-[Back to top](#summary)
-
-## R Packages
-=======
-# Packages and 
->>>>>>> b334136d78da7e09e416521ee1bfb49a64ada086
+### R Packages
 
 1. `raster`
 2. `sp`
@@ -163,55 +141,25 @@ dev.off()
 4. `rgeos`
 5. `RPostgreSQL`
 6. `rpostgis`
-7. 
+7. `leaflet`
 
 
-[Back to top](#summary)
-
-<<<<<<< HEAD
 <br></br> 
-=======
 
 
->>>>>>> b334136d78da7e09e416521ee1bfb49a64ada086
-
-## PostreSQL / PostGIS
+### PostgreSQL/PostGIS
 
 [Back to top](#summary)
 
 <br></br>
 
-
-
-
-# Code
+## Code
 
 [Back to top](#summary)
 
-<<<<<<< HEAD
 <br></br>
-=======
 
-
-
->>>>>>> b334136d78da7e09e416521ee1bfb49a64ada086
-
-# Anticipated Outcomes
-
-## Regional SVI Calculation
-
-<<<<<<< HEAD
-=======
-## GUI for Regional SVI by User Input
-
-The following is a screenshot of the RShiny GUI as it functioned on 11-20-2017. In this interface, one can see several things: an upload button which allows a user to input a shapefile delimiting an area of interest within which to calculate the SVI, a map area showing census tracts within the user delimited area (this will contain values for overall SVI values), and tabs to view the SVI rankings by thematic domain (yet to be implemented).
-
-![Census Tracts Selected by Hurricane Sandy Impact Shapefile)](../vignettes/RegionalSVI_ShinyGUI_11_20_17.png)
-
-[Back to top](#summary)
-
-
-# Timeline of Project
+## Timeline of Project
 
 1. November 20 - November 26
 
@@ -224,7 +172,18 @@ The following is a screenshot of the RShiny GUI as it functioned on 11-20-2017. 
 
 4. December 11 - December 17
 
+[Back to top](#summary)
 
+<br></br>
 
->>>>>>> b334136d78da7e09e416521ee1bfb49a64ada086
+# Anticipated Outcomes
+
+## Regional SVI Calculation
+
+## GUI for Regional SVI by User Input
+
+The following is a screenshot of the RShiny GUI as it functioned on 11-20-2017. In this interface, one can see several things: an upload button which allows a user to input a shapefile delimiting an area of interest within which to calculate the SVI, a map area showing census tracts within the user delimited area (this will contain values for overall SVI values), and tabs to view the SVI rankings by thematic domain (yet to be implemented).
+
+![Census Tracts Selected by Hurricane Sandy Impact Shapefile)](../vignettes/RegionalSVI_ShinyGUI_11_20_17.png)
+
 [Back to top](#summary)
