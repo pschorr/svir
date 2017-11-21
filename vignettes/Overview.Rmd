@@ -129,7 +129,7 @@ Approach and Method Section `DOL:M`
 
 Data for this project are derived from the 2010 United States Census and the 2010 - 2014 American Community Survey 5-year estimates. The Centers for Disease Control and Prevention, in partnership with the National Center for Environmental Health; the Office of Terrorism Preparedness and Emergency Response (OTPER); and the Agency for Toxic Substances and Disease Registry's (ATSDR) Geospatial Research, Analysis, and Services Program (GRASP) developed 15 aggregate variables that they packaged within an Esri shapefile. Included in the attribute table are also margins of error for each of the 15 variables, all at the census tract level. The shapefile can be downloaded at this address: https://svi.cdc.gov/SVIDataToolsDownload.html
 
-The figure below shows a snapshot of the shapefile used in the analysis. For the sake of clean data visualization, Alaska and Hawaii are not included in the figure below; the original dataset maintains Alaska and Hawaii attributes and geometry. 
+The figure below shows a snapshot of the shapefile used in the analysis. For the sake of clean data visualization, Alaska and Hawaii are not included in the figure below; the original dataset maintains Alaska and Hawaii attributes and geometry. `DOL:A`
 
 ```{r, eval = FALSE}
 pg = dbDriver("PostgreSQL") #Create postgreS driver
@@ -183,7 +183,7 @@ Data and Platform Section `DOL:A`
 
 **3. Create File Upload widget UI** `DOL:A`
 
-**4. Write File Upload server logic to accept shapefiles** `DOL:B`
+**4. Write File Upload server logic to accept shapefiles** `DOL:A`
 
 **5. Perform PostGIS geometry intersection using user input shapefile and census tracts** `DOL:B`
 
@@ -211,7 +211,7 @@ Data and Platform Section `DOL:A`
 3. Accept different types of spatial file format inputs (e.g. geoJSON, KML, etc.) 
 
 
-Section Code `DOL:A`
+Code Section `DOL:A`
 
 [Back to top](#summary)
 
@@ -255,7 +255,7 @@ Section Code `DOL:A`
 
 4. December 4 - December 10
     
-    a. Explore options for hosting a publically accessible webservice (e.g. `docker`).
+    a. Explore options for hosting a publicly accessible webservice (e.g. `docker`).
     
     b. Time set aside for other loose ends.
 
