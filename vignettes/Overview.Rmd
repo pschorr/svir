@@ -166,7 +166,7 @@ This project employs numerous packages, listed below.
 8. `shiny`
 
 
-Data and Platform Section `DOL:B`
+Data and Platform Section `DOL:A`
 
 [Back to top](#summary)
 
@@ -219,28 +219,44 @@ Section Code `DOL:A`
 
 # Timeline of Project
 
-1. Pre-Assignment 6 Accomplishments
+1. Pre-November 20, 2017 Accomplishments
+    
     a. Access ATSDR SVI variables [national dataset](https://svi.cdc.gov/SVIDataToolsDownload.html).
+    
     b. Review SVI documentation, including 2011 Department of Homeland Security and Emergency Management [study](https://gis.cdc.gov/grasp/svi/A%20Social%20Vulnerability%20Index%20for%20Disaster%20Management.pdf) and post-hoc index application to Hurricane Katrina case study. 
+    
     c. Complete set up of `PostgreSQL` database with `PostGIS` extension, and load ATSDR SVI variable data and census tract geometries.
+    
     d. Create Shiny web application user interface, including shapefile/geometry upload widget.
+    
     e. Integrate shapefile/geometry upload to `PostgreSQL` database, and perform intersect operation with ATSDR geometries.
 
 2. November 20 - November 26
+    
     a. Write logic to calculate and append percentile ranks for 15 census/ACS variables, four thematic domains, and overall SVI value.
+    
     b. Write logic to calculate and append flags for all ranked variables.
+    
     c. Integrate map display using `leaflet` package.
+    
     d. Display calculated SVI values on `leaflet` map display.
+    
     e. Determine best method to incorporate display of flag values in map interface.
+    
     f. Create download widget to allow user to download SVI data with geometries, and in tabular form.
     
 3. November 27 - December 3
+    
     a. In class presentation - 12:00pm, 11-27-17, Jonas Clark, Rm. 103
+    
     b. Add drop down menu to UI to allow for input/output geometry formats other than `shapefile`.
+    
     c. Time set aside for other loose ends.
 
 4. December 4 - December 10
+    
     a. Explore options for hosting a publically accessible webservice (e.g. `docker`).
+    
     b. Time set aside for other loose ends.
 
 Section Timeline `DOL:B`
