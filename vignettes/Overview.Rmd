@@ -95,12 +95,9 @@ The main objective of this project is to provide a means of calculating local/re
 # Approach and Method
 
 
-As outlined in the [summary](#summary), 
-
-## Calculating the SVI:
+As outlined in the [summary](#summary), the primary objective of this project is to calculate SVI at a relative scale according to user-specificed areas of interest (AOI). The calculation of SVI will be based on the CDC and ATSDR's ranking methodology below:
 
 <br></br>
-
 
 1. Tier 1: 15 Census/ACS Variables
     + Rank variables from highest to lowest value (except per capita income, rank lowest to highest)
@@ -108,6 +105,7 @@ As outlined in the [summary](#summary),
     + Identify the top and bottom 10% of census tracts for each of the 15 variables
     + Update a flag value/variable for those tracts
 
+<br></br>
 
 2. Tier 2: Thematic Domains
     + Sum the percentile ranks of the 15 census/ACS variables
@@ -115,6 +113,7 @@ As outlined in the [summary](#summary),
     + Identify the top and bottom 10% of census tracts for each of the 4 thematic domains
     + Update a flag value/variable for those tracts
 
+<br></br>
 
 3. Tier 3: Overall SVI
     + Sum the percentile ranks of the 4 thematic domains
@@ -122,6 +121,7 @@ As outlined in the [summary](#summary),
     + Identify the top and bottom 10% of census tracts for the overall SVI
     + Update a flag value/variable for those tracts
 
+<br></br>
 
 [Back to top](#summary)
 
@@ -168,9 +168,7 @@ This project employs numerous packages, listed below.
 7. `leaflet`
 8. `shiny`
 
-[Back to top](#summary)
-
-<br></br>
+### Code
 
 **1. Create Database and add SVI shapefile**
 
