@@ -11,9 +11,9 @@ navbarPage(
       sidebarPanel(
         fileInput(inputId="shp", label="Upload Shapefile", multiple=TRUE)),  # must upload all 6 shapefile extensions
 
-      # plot shapefile
+      # plot shapefile on leaflet map
       mainPanel(
-        plotOutput("map")  # take this out later; this is only to show that upload file works
+        leafletOutput("map", width = "100%", height = "100%")
       )
     ))
   ),
