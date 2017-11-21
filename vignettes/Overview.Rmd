@@ -175,3 +175,21 @@ The following is a screenshot of the RShiny GUI as it functioned on 11-20-2017. 
 ![Census Tracts Selected by Hurricane Sandy Impact Shapefile)](../vignettes/RegionalSVI_ShinyGUI_11_20_17.png)
 
 [Back to top](#summary)
+
+
+# Timeline of Project
+
+1. November 20 - November 26
+
+
+2. November 27 - December 3
+
+
+3. December 4 - December 10
+
+
+4. December 11 - December 17
+
+
+
+[Back to top](#summary)
