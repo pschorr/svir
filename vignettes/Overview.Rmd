@@ -90,6 +90,7 @@ As outlined in the [summary](#summary), the primary objective of this project is
 
 ## Calculating the SVI:
 
+<br></br>
 
 1. Tier 1: 15 Census/ACS Variables
     + Rank variables from highest to lowest value (except per capita income, rank lowest to highest)
@@ -99,16 +100,13 @@ As outlined in the [summary](#summary), the primary objective of this project is
 
 <br></br>
 
-
 2. Tier 2: Thematic Domains
     + Sum the percentile ranks of the 15 census/ACS variables
     + Calculate percentile rank for each census tract
     + Identify the top and bottom 10% of census tracts for each of the 4 thematic domains
     + Update a flag value/variable for those tracts
 
-
 <br></br>
-
 
 3. Tier 3: Overall SVI
     + Sum the percentile ranks of the 4 thematic domains
@@ -116,7 +114,10 @@ As outlined in the [summary](#summary), the primary objective of this project is
     + Identify the top and bottom 10% of census tracts for the overall SVI
     + Update a flag value/variable for those tracts
 
+
 Approach and Method Section `DOL:M`
+
+<br></br>
 
 [Back to top](#summary)
 
@@ -144,7 +145,6 @@ dev.off()
 
 ![United States Census Tracts](../vignettes/usCT_noAkHi.png) `DOL:M`
 
-<br></br>
 
 ## PostgreSQL/PostGIS
 
@@ -165,11 +165,13 @@ This project employs numerous packages, listed below.
 7. `leaflet`
 8. `shiny`
 
+
 Data and Platform Section `DOL:B`
 
 [Back to top](#summary)
 
 <br></br>
+
 
 # Code
 
