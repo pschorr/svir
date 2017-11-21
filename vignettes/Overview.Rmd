@@ -59,6 +59,7 @@ wd <- getwd()
 class(wd)
 wd
 ```
+<br></br>
 
 # Summary{#summary}
 
@@ -70,6 +71,8 @@ The SVI contains five primary index values: one for each of four thematic domain
 
 
 [Back to top](#summary)
+
+<br></br>
 
 # Approach and Method
 
@@ -98,9 +101,13 @@ Percentile Ranking:
 
 [Back to top](#summary)
 
+<br></br>
+
 # Data / Packages
 
 [Back to top](#summary)
+
+<br></br>
 
 ## ATSDR Social Vulnerability Index
 
@@ -123,6 +130,8 @@ dev.off()
 
 ### American Community Survey 5-Year Averages (2010 - 2014)
 
+<br></br>
+
 [Back to top](#summary)
 
 ## R Packages
@@ -138,19 +147,22 @@ dev.off()
 
 [Back to top](#summary)
 
+<br></br> 
+
 ## PostreSQL / PostGIS
 
 [Back to top](#summary)
 
+<br></br>
 
 # Code
 
 [Back to top](#summary)
 
+<br></br>
+
 # Anticipated Outcomes
 
 ## Regional SVI Calculation
-
-
 
 [Back to top](#summary)
