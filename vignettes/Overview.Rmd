@@ -156,25 +156,37 @@ This project employs numerous packages, listed below.
 
 ## Code
 
-*1. Create Database and add SVI shapefile*
-*2. Create UI for Shiny web application template*
-*3. Create File Upload widget UI*
-*4. Write File Upload server logic to accept shapefiles*
-*5. Perform PostGIS geometry intersection using user input shapefile and census tracts*
+**1. Create Database and add SVI shapefile**
+
+**2. Create UI for Shiny web application template**
+
+**3. Create File Upload widget UI**
+
+**4. Write File Upload server logic to accept shapefiles**
+
+**5. Perform PostGIS geometry intersection using user input shapefile and census tracts**
+
 6. Add leaflet map to UI 
+
 7. Rerank and calculate SVI for census tracts in AOI
+
 8. Calculate "flags" (if any) within AOI
+
 9. Write server logic to plot census tracts and flags on leaflet map
+
 10. Create Download widget UI
+
 11. Write server logic to download SVI in AOI
 
-**Repeat Steps 6-9 for each of the thematic domains**
+*Repeat Steps 6-9 for each of the thematic domains*
 
-*Bolded items indicate completed items*
+**Bolded items indicate completed items**
 
 ### Wishlist Items
 1. Create data dashboard of vulnerable population counts for each thematic domain in AOI
+
 2. Add interactive map features (e.g. listeners, info windows, etc.)
+
 3. Accept different types of spatial file format inputs (e.g. geoJSON, KML, etc.) 
 
 
