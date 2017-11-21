@@ -65,11 +65,18 @@ wd
 \
 The Social Vulnerability Index (SVI) provides a means of quantifying the relative degree of community vulnerability that stems from socio-demographic factors. Originally developed by the Agency for Toxic Substances and Disease Registry, within the Department of Health and Human Services, the SVI is calculated using variables from the U.S. Census, and American Community Survey (ACS). These variables provide a means to relatively quantify multiple types of socio-economic vulnerabilities at the national and state level. The primary purpose of the index is identify potentially less resilient communities, in order to help inform effective policies for disaster preparation, mitigation, and recovery efforts.
 
-The SVI contains five primary index values: one for each of four thematic domains (Socioeconomic Status, Household Composition/Disability, Minority Status/Language, housing and transportation), and an overall index that aggregates each of the four domains. Each census tract receives relative ranking among all census tracts at the national and states level, for each of the five index values. 
+To generate the SVI, one must conduct calculations at three tiers. Tier one is a transformation of several census/ACS variables into 15 aggregate variables. These 15 aggregate variables are then transformed into percentile ranks. In tier two, the percentile ranks of the 15 aggregate variables are combined and subsequently transformed into percentile ranks that represent “thematic domains” (Socioeconomic Status, Household Composition/Disability, Minority Status/Language, housing and transportation). Finally, tier three, the overall SVI value, is calculated by summing the percentile ranks of the four thematic domains, and subsequently transforming those values into percentile ranks. 
+
+In addition to the percentile rank values for each of the three tiers, census tracts with values in the bottom and top 10% of each tier receive a “flag”. These flags serve as a means of identifying census tracts with particular vulnerabilities in specific socio-demographic areas, that might otherwise be masked by less vulnerable rankings in other socio-demographic variables.
+
+In previous implementations of SVI, these relative values were calculated for each census tract at the national, and state levels. Blagh blagh blagh, adding more to this section now...
 
 
 
 [Back to top](#summary)
+
+
+
 
 # Approach and Method
 
@@ -98,20 +105,24 @@ Percentile Ranking:
 
 [Back to top](#summary)
 
-# Data / Packages
+
+
+
+
+# Data
 
 [Back to top](#summary)
 
 ## ATSDR Social Vulnerability Index
 
-### 2010 United States Census
+### 2010 United States Census and American Community Survey (2010 - 2014 5-Year Average) Variables
 
 ```{r, eval = FALSE}
 pg = dbDriver("PostgreSQL") #Create postgreS driver
 con = dbConnect(pg, user = 'postgres', password='pschorrzan1960',
                 host="localhost", port=5432, dbname="SVI") # Connect to database
 
-usCT_noAkHi <- pgGetGeom(con, query = "SELECT * FROM svi_us_geom WHERE st_abbr NOT IN ('AK', 'HI')")
+usCT_noAkHi <- pgGetGeom(con, query = "SELECT * FROM svi2014_us WHERE st_abbr NOT IN ('AK', 'HI')")
 
 png(filename = "../vignettes/usCT_noAkHi.png", width = 800, height = 600, units = "px", pointsize = 10)
 plot(usCT_noAkHi)
@@ -121,11 +132,7 @@ dev.off()
 ![United States Census Tracts (omitting Alaska and Hawaii)](../vignettes/usCT_noAkHi.png)
 
 
-### American Community Survey 5-Year Averages (2010 - 2014)
-
-[Back to top](#summary)
-
-## R Packages
+# Packages and 
 
 1. `raster`
 2. `sp`
@@ -138,20 +145,32 @@ dev.off()
 
 [Back to top](#summary)
 
+
+
+
 ## PostreSQL / PostGIS
 
 [Back to top](#summary)
+
+
+
 
 
 # Code
 
 [Back to top](#summary)
 
+
+
+
+
 # Anticipated Outcomes
 
 ## Regional SVI Calculation
 
 ## GUI for Regional SVI by User Input
+
+The following is a screenshot of the RShiny GUI as it functioned on 11-20-2017. In this interface, one can see several things: an upload button which allows a user to input a shapefile delimiting an area of interest within which to calculate the SVI, a map area showing census tracts within the user delimited area (this will contain values for overall SVI values), and tabs to view the SVI rankings by thematic domain (yet to be implemented).
 
 ![Census Tracts Selected by Hurricane Sandy Impact Shapefile)](../vignettes/RegionalSVI_ShinyGUI_11_20_17.png)
 
