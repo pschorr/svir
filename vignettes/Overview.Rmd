@@ -63,19 +63,23 @@ wd
 
 # Summary{#summary}
 
-\
+
+<br></br>
+
 
 The Social Vulnerability Index (SVI) provides a means of quantifying the relative degree of community vulnerability that stems from socio-demographic factors. Originally developed by the Agency for Toxic Substances and Disease Registry, within the Department of Health and Human Services, the SVI is calculated using variables from the U.S. Census, and American Community Survey (ACS). These variables quantify multiple types of socio-economic vulnerabilities at the national and state level in a relative way. The primary purpose of the index is identify potentially less resilient communities, in order to help inform effective policies for disaster preparation, mitigation, and recovery efforts.
 
-\
+
+<br></br>
+
 
 To generate the SVI, one must conduct calculations at three tiers. Tier one is a transformation of several census/ACS variables into 15 aggregate variables. These 15 aggregate variables are then transformed into percentile ranks. In tier two, the percentile ranks of the 15 aggregate variables are combined and subsequently transformed into percentile ranks that represent “thematic domains” (Socioeconomic Status, Household Composition/Disability, Minority Status/Language, housing and transportation). Finally, tier three, the overall SVI value, is calculated by summing the percentile ranks of the four thematic domains, and subsequently transforming those values into percentile ranks. 
 
-\
+<br></br>
 
 In addition, census tracts with extreme values in the SVI ranked variables were assigned variable “flags” for each index variable in the three tiers. A census tract was assigned a flag value if it ranked in the bottom or top 10% of each variable within each tier. These flags serve as a means of identifying census tracts with outstanding relative vulnerability/resilience in specific socio-demographic categories that might otherwise be overlooked when aggregated with other less/more vulnerable  socio-demographic variables.
 
-\
+<br></br>
 
 The main objective of this project is to provide a means of calculating local/regional relative SVI values. In previous implementations of the SVI, these relative values were calculated for each census tract relative to all other census tracts at both the national, and state levels. As the primary use case for the SVI is disaster and emergency preparation, mitigation, and recovery efforts, calculating SVI values only amongst those census tracts within an affected area seems pertinent. As the SVI is a relative measure, the inclusion of social vulnerability values of non-impacted areas. The web service designed in this project will allow for a user upload a geographic boundary for a defined area of interest, and view and download the results of a regional SVI calculated for the census tracts within that region.
 
@@ -93,9 +97,9 @@ The main objective of this project is to provide a means of calculating local/re
 
 As outlined in the [summary](#summary), the primary 
 
-Percentile Ranking: 
+## Calculating the SVI:
 
-\
+<br></br>
 
 
 1. Tier 1: 15 Census/ACS Variables
@@ -104,7 +108,7 @@ Percentile Ranking:
     + Identify the top and bottom 10% of census tracts for each of the 15 variables
     + Update a flag value/variable for those tracts
 
-\
+<br></br>
 
 
 2. Tier 2: Thematic Domains
@@ -114,7 +118,7 @@ Percentile Ranking:
     + Update a flag value/variable for those tracts
 
 
-\
+<br></br>
 
 
 3. Tier 3: Overall SVI
@@ -181,15 +185,20 @@ dev.off()
 ## Timeline of Project
 
 1. Pre-Assignment 6 Accomplishments
-    a. Access ATSDR SVI nation wide variable data. (https://svi.cdc.gov/SVIDataToolsDownload.html)
-    b. Review SVI documentation, 2011 Department of Homeland Security and Emergency Management study and post-hoc index application to Hurricane Katrina case study. (https://gis.cdc.gov/grasp/svi/A%20Social%20Vulnerability%20Index%20for%20Disaster%20Management.pdf)
+    a. Access ATSDR SVI variables [national dataset](https://svi.cdc.gov/SVIDataToolsDownload.html).
+    b. Review SVI documentation, including 2011 Department of Homeland Security and Emergency Management [study](https://gis.cdc.gov/grasp/svi/A%20Social%20Vulnerability%20Index%20for%20Disaster%20Management.pdf) and post-hoc index application to Hurricane Katrina case study. 
     c. 
 
 2. November 20 - November 26
-
-
+    a. 
+    b. 
+    c. 
+    
+    
 3. November 27 - December 3
-
+    a. 
+    b. 
+    c. In class presentation - 12:00pm, 11-27-17, Jonas Clark, Rm. 103
 
 4. December 4 - December 10
 
