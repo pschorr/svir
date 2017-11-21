@@ -134,7 +134,9 @@ As outlined in the [summary](#summary), the primary
 
 ## Data
 
-### 2010 United States Census and American Community Survey (2010 - 2014 5-Year Average) Variables
+Data for this project are derived from the 2010 United States Census and the 2010 - 2014 American Community Survey 5-year estimates. The Centers for Disease Control and Prevention, in partnership with the National Center for Environmental Health; the Office of Terrorism Preparedness and Emergency Response (OTPER); and the Agency for Toxic Substances and Disease Registry's (ATSDR) Geospatial Research, Analysis, and Services Program (GRASP) developed 15 aggregate variables that they packaged within an Esri shapefile. Included in the attribute table are also margins of error for each of the 15 variables, all at the census tract level. The shapefile can be downloaded at this address: https://svi.cdc.gov/SVIDataToolsDownload.html
+
+The figure below shows a snapshot of the shapefile used in the analysis. For the sake of clean data visualization, Alaska and Hawaii are not included in the figure below; the original dataset maintains Alaska and Hawaii attributes and geometry. 
 
 ```{r, eval = FALSE}
 pg = dbDriver("PostgreSQL") #Create postgreS driver
@@ -152,11 +154,15 @@ dev.off()
 
 <br></br>
 
-### American Community Survey 5-Year Averages (2010 - 2014)
+### PostgreSQL/PostGIS
 
-<br></br>
+Because the data utilized in this project contains over 72,000 unique geometries, a spatially-enabled database was implemented to maximize efficiency and speed of data analysis in RStudio. PostGIS spatial queries allowed for the selection of census tracts - and their associated indicator variables - that fall within a user-specified area of interest (i.e. an impact zone, hazard zone, etc.); this significantly decreases time of rendering and computational intensity, as only a small fraction of the 72,000+ features are loaded into memory. 
+
+The SVI shapefile for this project was loaded into PostgreSQL and the preservation of geometries was made possible in PostGIS. The database is currently hosted locally. 
 
 ### R Packages
+
+This project employs numerous packages, listed below. 
 
 1. `raster`
 2. `sp`
@@ -165,18 +171,35 @@ dev.off()
 5. `RPostgreSQL`
 6. `rpostgis`
 7. `leaflet`
-
-
-<br></br> 
-
-
-### PostgreSQL/PostGIS
+8. `shiny`
 
 [Back to top](#summary)
 
 <br></br>
 
 ## Code
+
+*1. Create Database and add SVI shapefile*
+*2. Create UI for Shiny web application template*
+*3. Create File Upload widget UI*
+*4. Write File Upload server logic to accept shapefiles*
+*5. Perform PostGIS geometry intersection using user input shapefile and census tracts*
+6. Add leaflet map to UI 
+7. Rerank and calculate SVI for census tracts in AOI
+8. Calculate "flags" (if any) within AOI
+9. Write server logic to plot census tracts and flags on leaflet map
+10. Create Download widget UI
+11. Write server logic to download SVI in AOI
+
+**Repeat Steps 6-9 for each of the thematic domains**
+
+*Bolded items indicate completed items*
+
+### Wishlist Items
+1. Create data dashboard of vulnerable population counts for each thematic domain in AOI
+2. Add interactive map features (e.g. listeners, info windows, etc.)
+3. Accept different types of spatial file format inputs (e.g. geoJSON, KML, etc.) 
+
 
 [Back to top](#summary)
 
