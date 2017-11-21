@@ -15,10 +15,10 @@ shinyServer(function(input, output) {
   con <- dbConnect(
     drv,
     user = "postgres",
-    password = "gisde2018",
+    password = "pschorrzan1960",
     host = "localhost",
     port = 5432,
-    dbname = "svir"
+    dbname = "SVI"
   )
 
   # create upload file function
@@ -38,7 +38,7 @@ shinyServer(function(input, output) {
       shpFile <- spTransform(shpFile, CRS("+proj=longlat +datum=NAD83 +no_defs +ellps=GRS80 +towgs84=0,0,0"))
       writeOGR(
         shpFile,
-        dsn = c("PG:user = 'postgres' dbname = 'svir' host = 'localhost'"),
+        dsn = c("PG:user = 'postgres' dbname = 'SVI' host = 'localhost'"),
         # write shp to PG table & create sp index
         layer = "userext",
         overwrite_layer = TRUE,
