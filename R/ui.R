@@ -1,4 +1,5 @@
 library(shiny)
+library(leaflet)
 
 # Define UI for file upload
 navbarPage(
@@ -13,7 +14,7 @@ navbarPage(
 
       # plot shapefile on leaflet map
       mainPanel(
-        leafletOutput("map", width = "100%", height = "100%")
+        leafletOutput("map")
       )
     ))
   ),
